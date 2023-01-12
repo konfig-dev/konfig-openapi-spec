@@ -12,6 +12,7 @@
     "generate": "ts-node src/generate.ts",
     "clean": "rm -rf dist/",
     "prepare": "yarn build",
+    "release-ci": "release-it --ci",
     "release": "release-it"
   },
   "devDependencies": {
