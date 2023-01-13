@@ -99,9 +99,15 @@ export const LintResponseBody = registry.register(
 
 export const PushResponseBody = registry.register(
   'PushResponseBody',
-  z.object({
-    success: z.literal(true),
-  })
+  z.union([
+    z.object({
+      status: z.literal('created-pr'),
+      link: z.string(),
+    }),
+    z.object({
+      status: z.literal('no-diff'),
+    }),
+  ])
 )
 
 registry.registerPath({
