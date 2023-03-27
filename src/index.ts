@@ -140,9 +140,9 @@ export const PushResponseBody = registry.register(
 registry.registerPath({
   method: 'post',
   path: '/generate',
-  description: 'Generate SDKs',
-  summary:
-    'Generate SDKs and receive signed S3 download URLs for the generated packages.',
+  description:
+    'Generate SDKs and receive signed S3 download URLs for the generated packages',
+  summary: 'Generate SDKs',
   operationId: 'SDK_generate',
   tags: ['SDK'],
   security: [{ authorization: [], session: [] }],
