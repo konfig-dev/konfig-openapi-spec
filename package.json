@@ -8,7 +8,7 @@
     "dist/**/*"
   ],
   "scripts": {
-    "dev": "nodemon --watch './src/**/*' -e ts --exec 'yarn build",
+    "dev": "nodemon --watch './src/**/*' -e ts --exec 'yarn build'",
     "build": "yarn clean && tsc && yarn generate",
     "generate": "ts-node src/generate.ts",
     "generate-sdk": "../konfig-cli/bin/dev generate",

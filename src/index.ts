@@ -145,6 +145,7 @@ registry.registerPath({
     'Generate SDKs and receive signed S3 download URLs for the generated packages.',
   operationId: 'SDK_generate',
   tags: ['SDK'],
+  security: [{ authorization: [], session: [] }],
   requestBody: {
     content: {
       'application/json': {
