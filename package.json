@@ -11,8 +11,8 @@
     "dev": "nodemon --watch './src/**/*' -e ts --exec 'yarn build",
     "build": "yarn clean && tsc && yarn generate",
     "generate": "ts-node src/generate.ts",
-    "generate-sdk": "yarn konfig generate",
-    "generate-sdk-dev": "yarn konfig generate -d",
+    "generate-sdk": "../konfig-cli/bin/dev generate",
+    "generate-sdk-dev": "../konfig-cli/bin/dev generate -d",
     "clean": "rm -rf dist/",
     "prepare": "yarn build",
     "release-ci": "release-it --ci",
@@ -26,7 +26,6 @@
     "yaml": "^2.2.0"
   },
   "dependencies": {
-    "konfig-cli": "workspace:^",
     "konfig-lib": "workspace:^",
     "konfig-zod-to-openapi": "workspace:^"
   }
