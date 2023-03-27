@@ -1,14 +1,41 @@
 import { DiagnosticSeverity } from '@stoplight/types'
 import { z } from './zod'
-import { OpenAPIRegistry } from '@asteasolutions/zod-to-openapi'
+import { OpenAPIRegistry } from 'konfig-zod-to-openapi'
 import { specExample } from './spec-example'
+import { GenerateRequestBody as GRB } from 'konfig-lib'
 
 export const registry = new OpenAPIRegistry()
+
+// Security Schemes
+registry.registerComponent('securitySchemes', 'authorization', {
+  name: 'Authorization',
+  in: 'header',
+  type: 'apiKey',
+})
+registry.registerComponent('securitySchemes', 'session', {
+  name: 'session',
+  in: 'cookie',
+  type: 'apiKey',
+})
 
 const specSchema = z.string().openapi({
   description: 'JSON or YAML string of your OpenAPI Specification',
   example: specExample,
 })
+
+const GENERATE_REQUEST_BODY_NAME = 'GenerateRequestBody'
+export const GenerateRequestBody = registry.register(
+  GENERATE_REQUEST_BODY_NAME,
+  GRB
+)
+
+const GENERATE_RESPONSE_BODY_NAME = 'GenerateResponseBody'
+export const GenerateResponseBodySchema = z.object({
+  urls: z.object({ url: z.string(), key: z.string() }).array(),
+  generateConfigId: z.string(),
+})
+registry.register(GENERATE_RESPONSE_BODY_NAME, GenerateResponseBodySchema)
+export type GenerateResponseBody = z.infer<typeof GenerateResponseBodySchema>
 
 const LINT_REQUEST_BODY_NAME = 'LintRequestBody'
 export const LintRequestBody = registry.register(
@@ -112,10 +139,42 @@ export const PushResponseBody = registry.register(
 
 registry.registerPath({
   method: 'post',
+  path: '/generate',
+  description: 'Generate SDKs',
+  summary:
+    'Generate SDKs and receive signed S3 download URLs for the generated packages.',
+  operationId: 'SDK_generate',
+  tags: ['SDK'],
+  requestBody: {
+    content: {
+      'application/json': {
+        schema: {
+          $ref: `#/components/schemas/${GENERATE_REQUEST_BODY_NAME}`,
+        },
+      },
+    },
+  },
+  responses: {
+    200: {
+      description: 'Generated SDKs',
+      content: {
+        'application/json': {
+          schema: {
+            $ref: `#/components/schemas/${GENERATE_RESPONSE_BODY_NAME}`,
+          },
+        },
+      },
+    },
+  },
+})
+
+registry.registerPath({
+  method: 'post',
   path: '/push',
   description:
     'Push your OpenAPI Specification to Konfig to trigger SDK generation for a specified repository',
   summary: 'Push your OpenAPI Specification to Konfig',
+  operationId: 'Specifications_push',
   tags: ['Specifications'],
   requestBody: {
     content: {
@@ -144,6 +203,7 @@ registry.registerPath({
   description:
     'Lint your OpenAPI Specification to ensure generation of high quality SDKs with Konfig',
   summary: 'Lint your OpenAPI Specification',
+  operationId: 'Linting_lint',
   tags: ['Linting'],
   requestBody: {
     content: {

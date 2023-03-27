@@ -1,4 +1,4 @@
-import { OpenAPIGenerator } from '@asteasolutions/zod-to-openapi'
+import { OpenAPIGenerator } from 'konfig-zod-to-openapi'
 import * as fs from 'fs'
 import * as path from 'path'
 import { stringify } from 'yaml'
@@ -22,7 +22,7 @@ fs.writeFileSync(
         },
       },
       servers: [{ url: 'https://api.konfigthis.com' }],
-      tags: [{ name: 'Linting' }, { name: 'Specifications' }],
+      tags: [{ name: 'Linting' }, { name: 'Specifications' }, { name: 'SDK' }],
     })
   )
 )

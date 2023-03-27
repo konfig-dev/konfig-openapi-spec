@@ -24,6 +24,7 @@
     "yaml": "^2.2.0"
   },
   "dependencies": {
-    "@asteasolutions/zod-to-openapi": "^4.0.0"
+    "konfig-lib": "workspace:^",
+    "konfig-zod-to-openapi": "workspace:^"
   }
 }
