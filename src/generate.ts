@@ -15,7 +15,7 @@ fs.writeFileSync(
     generator.generateDocument({
       info: {
         version: '1.0.0',
-        title: "Konfig's REST API",
+        title: 'Konfig REST API',
         description: 'To help you generate SDKs with Konfig',
         contact: {
           url: 'https://konfigthis.com',
