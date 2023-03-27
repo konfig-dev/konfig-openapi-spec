@@ -1,0 +1,11 @@
+outputDirectory: /tmp/konfig-sdks-out
+specPath: dist/spec.yaml
+generators:
+  typescript:
+    version: 1.0.0
+    npmName: konfig-typescript-sdk
+    outputDirectory: typescript
+    clientName: Konfig
+    git:
+      userId: konfig-dev
+      repoId: konfig-typescript-sdk/tree/main/typescript
