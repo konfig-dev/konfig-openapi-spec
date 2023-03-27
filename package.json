@@ -9,8 +9,7 @@
   ],
   "scripts": {
     "dev": "nodemon --watch './src/**/*' -e ts --exec 'yarn build",
-    "build": "yarn clean && tsc && yarn generate && yarn generate-sdk",
-    "build-dev": "yarn clean && tsc && yarn generate && yarn generate-sdk-dev",
+    "build": "yarn clean && tsc && yarn generate",
     "generate": "ts-node src/generate.ts",
     "generate-sdk": "yarn konfig generate",
     "generate-sdk-dev": "yarn konfig generate -d",
