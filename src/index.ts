@@ -8,7 +8,7 @@ export const registry = new OpenAPIRegistry()
 
 // Security Schemes
 registry.registerComponent('securitySchemes', 'authorization', {
-  name: 'Authorization',
+  name: 'authorization',
   in: 'header',
   type: 'apiKey',
 })
