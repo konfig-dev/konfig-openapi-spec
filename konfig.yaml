@@ -8,4 +8,4 @@ generators:
     clientName: Konfig
     git:
       userId: konfig-dev
-      repoId: konfig-typescript-sdk/tree/main/typescript
+      repoId: konfig-typescript-sdk
