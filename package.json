@@ -15,8 +15,8 @@
     "generate-sdk-dev": "../konfig-cli/bin/dev generate -d",
     "clean": "rm -rf dist/",
     "prepare": "yarn build",
-    "release-ci": "release-it --ci",
-    "release": "release-it"
+    "release-ci": "konfig-release-it --ci",
+    "release": "konfig-release-it"
   },
   "devDependencies": {
     "konfig-release-it": "workspace:^",
