@@ -87,7 +87,13 @@ components:
                   required:
                     - script
                 groupId:
-                  description: com.acme
+                  description: Uniquely identifies your JVM-based project (ex. "com.acme"). By
+                    default we publish packages under Konfig's group id of
+                    "com.konfigthis". If you would like to publish to your own
+                    group ID then create a Sonatype account
+                    (https://central.sonatype.org/publish/publish-guide/#initial-setup)
+                    and claim your group ID and add "dphuang2" to the list of
+                    users that can publish to your group ID.
                 packageName:
                   description: acme
                 artifactId:
@@ -146,11 +152,17 @@ components:
                   required:
                     - script
                 groupId:
-                  description: com.acme
+                  description: Uniquely identifies your JVM-based project (ex. "com.acme"). By
+                    default we publish packages under Konfig's group id of
+                    "com.konfigthis". If you would like to publish to your own
+                    group ID then create a Sonatype account
+                    (https://central.sonatype.org/publish/publish-guide/#initial-setup)
+                    and claim your group ID and add "dphuang2" to the list of
+                    users that can publish to your group ID.
                 packageName:
                   description: acme
                 artifactId:
-                  description: ascme-java-sdk
+                  description: acme-java-sdk
               required:
                 - version
                 - git
@@ -278,9 +290,10 @@ components:
                 clientName:
                   type: string
                 clientState:
-                  type: array
-                  items:
-                    type: string
+                  description: A list of stateful properties generated into the SDK that can be
+                    used in custom implementation hooks. This is useful when you
+                    need state in the SDK that is not described in the OpenAPI
+                    Specification such as a key used for request signing.
                 setSkipSerializationToTrueByDefault:
                   type: boolean
                 apiKeyAlias:
@@ -378,9 +391,11 @@ components:
                         - parameters
                         - response
                     clientState:
-                      type: array
-                      items:
-                        type: string
+                      description: A list of stateful properties generated into the SDK that can be
+                        used in custom implementation hooks. This is useful when
+                        you need state in the SDK that is not described in the
+                        OpenAPI Specification such as a key used for request
+                        signing.
                     removeRequiredProperties:
                       type: array
                       items:
@@ -547,9 +562,17 @@ components:
                   required:
                     - script
                 logoPath:
-                  type: string
+                  description: The path to a logo image that is copied to the generated C# SDK to
+                    be used as an image on https://nuget.org. This is required
+                    and important for branding your SDK.
                 packageName:
-                  description: Acme.Net
+                  description: The name of this package that shows up on https://nuget.org (e.g.
+                    "Acme.Net")
+                clientState:
+                  description: A list of stateful properties generated into the SDK that can be
+                    used in custom implementation hooks. This is useful when you
+                    need state in the SDK that is not described in the OpenAPI
+                    Specification such as a key used for request signing.
               required:
                 - version
                 - git
@@ -896,11 +919,17 @@ components:
                     type: object
                     properties: *a1
                   groupId:
-                    description: com.acme
+                    description: Uniquely identifies your JVM-based project (ex. "com.acme"). By
+                      default we publish packages under Konfig's group id of
+                      "com.konfigthis". If you would like to publish to your own
+                      group ID then create a Sonatype account
+                      (https://central.sonatype.org/publish/publish-guide/#initial-setup)
+                      and claim your group ID and add "dphuang2" to the list of
+                      users that can publish to your group ID.
                   packageName:
                     description: acme
                   artifactId:
-                    description: ascme-java-sdk
+                    description: acme-java-sdk
                 required:
                   - generator
                   - version
@@ -1011,7 +1040,13 @@ components:
                     type: object
                     properties: *a1
                   groupId:
-                    description: com.acme
+                    description: Uniquely identifies your JVM-based project (ex. "com.acme"). By
+                      default we publish packages under Konfig's group id of
+                      "com.konfigthis". If you would like to publish to your own
+                      group ID then create a Sonatype account
+                      (https://central.sonatype.org/publish/publish-guide/#initial-setup)
+                      and claim your group ID and add "dphuang2" to the list of
+                      users that can publish to your group ID.
                   packageName:
                     description: acme
                   artifactId:
@@ -1267,9 +1302,18 @@ components:
                     type: object
                     properties: *a1
                   logoPath:
-                    type: string
+                    description: The path to a logo image that is copied to the generated C# SDK to
+                      be used as an image on https://nuget.org. This is required
+                      and important for branding your SDK.
                   packageName:
-                    description: Acme.Net
+                    description: The name of this package that shows up on https://nuget.org (e.g.
+                      "Acme.Net")
+                  clientState:
+                    description: A list of stateful properties generated into the SDK that can be
+                      used in custom implementation hooks. This is useful when
+                      you need state in the SDK that is not described in the
+                      OpenAPI Specification such as a key used for request
+                      signing.
                 required:
                   - generator
                   - version
