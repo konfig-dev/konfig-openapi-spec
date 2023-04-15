@@ -1,6 +1,6 @@
 {
   "name": "konfig-openapi-spec",
-  "version": "1.0.83",
+  "version": "1.0.84",
   "packageManager": "yarn@3.2.3",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
