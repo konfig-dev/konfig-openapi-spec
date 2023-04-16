@@ -1618,22 +1618,27 @@ components:
         fixConfig:
           type: object
           properties:
-            modify:
-              type: object
-              additionalProperties:
-                oneOf: &a2
-                  - type: string
-                  - type: boolean
-                  - type: number
-                  - type: object
-                nullable: true
-            update:
+            updateProperty:
               type: object
               additionalProperties:
                 type: object
                 additionalProperties:
-                  oneOf: *a2
-                  nullable: true
+                  type: object
+                  additionalProperties:
+                    oneOf:
+                      - type: string
+                      - type: boolean
+                      - type: number
+                      - type: object
+                    nullable: true
+            modify:
+              description: A JSON where the key is a JSON Path pointing to a location in the
+                OAS and the value is the JSON value to be placed at the
+                location.
+            update:
+              description: A JSON where the key is a JSON Path pointing to a location in the
+                OAS and the value is a JSON Object that is merged with the
+                existing JSON Object at that location.
         filterQueryParams:
           type: array
           items:
