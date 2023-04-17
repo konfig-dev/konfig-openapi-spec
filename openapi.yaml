@@ -163,6 +163,8 @@ components:
                   description: acme
                 artifactId:
                   description: acme-java-sdk
+                removeKonfigBranding:
+                  type: boolean
               required:
                 - version
                 - git
@@ -628,6 +630,8 @@ components:
                     - script
                 packageName:
                   description: acme-php
+                packagistUsername:
+                  description: The username used to publish to packagist.org
                 invokerPackage:
                   type: string
               required:
@@ -930,6 +934,8 @@ components:
                     description: acme
                   artifactId:
                     description: acme-java-sdk
+                  removeKonfigBranding:
+                    type: boolean
                 required:
                   - generator
                   - version
@@ -1370,6 +1376,8 @@ components:
                     properties: *a1
                   packageName:
                     description: acme-php
+                  packagistUsername:
+                    description: The username used to publish to packagist.org
                   invokerPackage:
                     type: string
                 required:
