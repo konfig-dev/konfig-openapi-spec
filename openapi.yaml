@@ -165,6 +165,12 @@ components:
                   description: acme-java-sdk
                 removeKonfigBranding:
                   type: boolean
+                toStringReturnsJson:
+                  description: Modify the behavior of toString() for generated schema classes to
+                    return a parsable JSON string as opposed to a string
+                    representation of the object's properties. This could be
+                    useful when you want to log the contents of a schema class
+                    without having to manually serialize it to JSON.
               required:
                 - version
                 - git
@@ -936,6 +942,12 @@ components:
                     description: acme-java-sdk
                   removeKonfigBranding:
                     type: boolean
+                  toStringReturnsJson:
+                    description: Modify the behavior of toString() for generated schema classes to
+                      return a parsable JSON string as opposed to a string
+                      representation of the object's properties. This could be
+                      useful when you want to log the contents of a schema class
+                      without having to manually serialize it to JSON.
                 required:
                   - generator
                   - version
