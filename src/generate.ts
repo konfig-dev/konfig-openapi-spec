@@ -6,7 +6,7 @@ import { registry } from '.'
 
 const generator = new OpenAPIGenerator(registry.definitions, '3.0.0')
 
-const baseFolder = path.dirname(path.dirname(__dirname))
+const baseFolder = path.dirname(__dirname)
 const outputPath = path.join(baseFolder, 'openapi.yaml')
 
 fs.writeFileSync(
