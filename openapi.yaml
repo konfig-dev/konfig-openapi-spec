@@ -313,9 +313,21 @@ components:
                 packageUrl:
                   type: string
                 topLevelOperations:
-                  type: object
-                  additionalProperties:
-                    type: string
+                  anyOf:
+                    - type: object
+                      additionalProperties:
+                        type: string
+                    - type: array
+                      items:
+                        type: object
+                        properties:
+                          operationId:
+                            type: string
+                          methodName:
+                            type: string
+                        required:
+                          - operationId
+                          - methodName
                 generator:
                   anyOf:
                     - type: string
@@ -409,9 +421,21 @@ components:
                       items:
                         type: string
                     topLevelOperations:
-                      type: object
-                      additionalProperties:
-                        type: string
+                      anyOf:
+                        - type: object
+                          additionalProperties:
+                            type: string
+                        - type: array
+                          items:
+                            type: object
+                            properties:
+                              operationId:
+                                type: string
+                              methodName:
+                                type: string
+                            required:
+                              - operationId
+                              - methodName
                     includeFetchAdapter:
                       type: boolean
                     includeEventSourceParser:
@@ -1685,6 +1709,8 @@ components:
           type: string
         infoContactName:
           type: string
+        omitInfoDescription:
+          type: boolean
         validateSpec:
           type: boolean
         infoContactUrl:
