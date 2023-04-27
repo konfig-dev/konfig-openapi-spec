@@ -137,6 +137,16 @@ export const PushResponseBody = registry.register(
   ])
 )
 
+export const formatPythonBodySchema = z
+  .string()
+  .openapi({ example: 'print ()' })
+
+const FORMAT_PYTHON_BODY_NAME = 'FormatPythonBody'
+export const FormatPythonBody = registry.register(
+  FORMAT_PYTHON_BODY_NAME,
+  formatPythonBodySchema
+)
+
 registry.registerPath({
   method: 'post',
   path: '/generate',
@@ -163,6 +173,34 @@ registry.registerPath({
           schema: {
             $ref: `#/components/schemas/${GENERATE_RESPONSE_BODY_NAME}`,
           },
+        },
+      },
+    },
+  },
+})
+
+registry.registerPath({
+  method: 'post',
+  path: '/formatPython',
+  description: 'Python formatter using the black package',
+  summary: 'Format Python Code',
+  operationId: 'SDK_formatPython',
+  tags: ['SDK'],
+  requestBody: {
+    content: {
+      'text/plain': {
+        schema: {
+          $ref: `#/components/schemas/${FORMAT_PYTHON_BODY_NAME}`,
+        },
+      },
+    },
+  },
+  responses: {
+    200: {
+      description: 'Status',
+      content: {
+        'text/plain': {
+          schema: z.string(),
         },
       },
     },

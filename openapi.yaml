@@ -87,6 +87,7 @@ components:
                   required:
                     - script
                 groupId:
+                  type: string
                   description: Uniquely identifies your JVM-based project (ex. "com.acme"). By
                     default we publish packages under Konfig's group id of
                     "com.konfigthis". If you would like to publish to your own
@@ -95,8 +96,10 @@ components:
                     and claim your group ID and add "dphuang2" to the list of
                     users that can publish to your group ID.
                 packageName:
+                  type: string
                   description: acme
                 artifactId:
+                  type: string
                   description: ascme-java-sdk
               required:
                 - version
@@ -152,6 +155,7 @@ components:
                   required:
                     - script
                 groupId:
+                  type: string
                   description: Uniquely identifies your JVM-based project (ex. "com.acme"). By
                     default we publish packages under Konfig's group id of
                     "com.konfigthis". If you would like to publish to your own
@@ -160,12 +164,15 @@ components:
                     and claim your group ID and add "dphuang2" to the list of
                     users that can publish to your group ID.
                 packageName:
+                  type: string
                   description: acme
                 artifactId:
+                  type: string
                   description: acme-java-sdk
                 removeKonfigBranding:
                   type: boolean
                 toStringReturnsJson:
+                  type: boolean
                   description: Modify the behavior of toString() for generated schema classes to
                     return a parsable JSON string as opposed to a string
                     representation of the object's properties. This could be
@@ -279,8 +286,10 @@ components:
                   required:
                     - script
                 packageName:
+                  type: string
                   description: acme_client
                 projectName:
+                  type: string
                   description: acme-python-sdk
                 removeKonfigBranding:
                   type: boolean
@@ -298,6 +307,9 @@ components:
                 clientName:
                   type: string
                 clientState:
+                  type: array
+                  items:
+                    type: string
                   description: A list of stateful properties generated into the SDK that can be
                     used in custom implementation hooks. This is useful when you
                     need state in the SDK that is not described in the OpenAPI
@@ -395,6 +407,7 @@ components:
                     clientName:
                       type: string
                     npmName:
+                      type: string
                       description: acme-typescript-sdk
                     pagination:
                       type: object
@@ -411,6 +424,9 @@ components:
                         - parameters
                         - response
                     clientState:
+                      type: array
+                      items:
+                        type: string
                       description: A list of stateful properties generated into the SDK that can be
                         used in custom implementation hooks. This is useful when
                         you need state in the SDK that is not described in the
@@ -471,12 +487,16 @@ components:
                       type: boolean
                       default: false
                     clientName:
+                      type: string
                       description: AcmeClient
                     npmDescription:
+                      type: string
                       description: SDK for Acme's REST API
                     npmAuthor:
+                      type: string
                       description: acme.com
                     npmName:
+                      type: string
                       description: acme-typescript-sdk
                     packageVersion:
                       type: string
@@ -594,13 +614,18 @@ components:
                   required:
                     - script
                 logoPath:
+                  type: string
                   description: The path to a logo image that is copied to the generated C# SDK to
                     be used as an image on https://nuget.org. This is required
                     and important for branding your SDK.
                 packageName:
+                  type: string
                   description: The name of this package that shows up on https://nuget.org (e.g.
                     "Acme.Net")
                 clientState:
+                  type: array
+                  items:
+                    type: string
                   description: A list of stateful properties generated into the SDK that can be
                     used in custom implementation hooks. This is useful when you
                     need state in the SDK that is not described in the OpenAPI
@@ -659,8 +684,11 @@ components:
                   required:
                     - script
                 packageName:
+                  type: string
                   description: acme-php
                 packagistUsername:
+                  type: string
+                  default: konfig
                   description: The username used to publish to packagist.org
                 invokerPackage:
                   type: string
@@ -718,8 +746,10 @@ components:
                   required:
                     - script
                 groupId:
+                  type: string
                   description: com.acme
                 artifactId:
+                  type: string
                   description: acme-kotlin-sdk
               required:
                 - version
@@ -775,12 +805,16 @@ components:
                   required:
                     - script
                 podName:
+                  type: string
                   description: AcmeClient
                 classPrefix:
+                  type: string
                   description: A
                 authorName:
+                  type: string
                   description: acme.com
                 authorEmail:
+                  type: string
                   description: engineering@acme.com
               required:
                 - version
@@ -838,6 +872,7 @@ components:
                   required:
                     - script
                 packageName:
+                  type: string
                   description: acme
               required:
                 - version
@@ -892,8 +927,10 @@ components:
                   required:
                     - script
                 projectName:
+                  type: string
                   description: Acme
                 podAuthors:
+                  type: string
                   description: acme.com
               required:
                 - version
@@ -953,6 +990,7 @@ components:
                     type: object
                     properties: *a1
                   groupId:
+                    type: string
                     description: Uniquely identifies your JVM-based project (ex. "com.acme"). By
                       default we publish packages under Konfig's group id of
                       "com.konfigthis". If you would like to publish to your own
@@ -961,12 +999,15 @@ components:
                       and claim your group ID and add "dphuang2" to the list of
                       users that can publish to your group ID.
                   packageName:
+                    type: string
                     description: acme
                   artifactId:
+                    type: string
                     description: acme-java-sdk
                   removeKonfigBranding:
                     type: boolean
                   toStringReturnsJson:
+                    type: boolean
                     description: Modify the behavior of toString() for generated schema classes to
                       return a parsable JSON string as opposed to a string
                       representation of the object's properties. This could be
@@ -1082,6 +1123,7 @@ components:
                     type: object
                     properties: *a1
                   groupId:
+                    type: string
                     description: Uniquely identifies your JVM-based project (ex. "com.acme"). By
                       default we publish packages under Konfig's group id of
                       "com.konfigthis". If you would like to publish to your own
@@ -1090,8 +1132,10 @@ components:
                       and claim your group ID and add "dphuang2" to the list of
                       users that can publish to your group ID.
                   packageName:
+                    type: string
                     description: acme
                   artifactId:
+                    type: string
                     description: ascme-java-sdk
                 required:
                   - generator
@@ -1220,12 +1264,16 @@ components:
                     type: boolean
                     default: false
                   clientName:
+                    type: string
                     description: AcmeClient
                   npmDescription:
+                    type: string
                     description: SDK for Acme's REST API
                   npmAuthor:
+                    type: string
                     description: acme.com
                   npmName:
+                    type: string
                     description: acme-typescript-sdk
                   packageVersion:
                     type: string
@@ -1344,13 +1392,18 @@ components:
                     type: object
                     properties: *a1
                   logoPath:
+                    type: string
                     description: The path to a logo image that is copied to the generated C# SDK to
                       be used as an image on https://nuget.org. This is required
                       and important for branding your SDK.
                   packageName:
+                    type: string
                     description: The name of this package that shows up on https://nuget.org (e.g.
                       "Acme.Net")
                   clientState:
+                    type: array
+                    items:
+                      type: string
                     description: A list of stateful properties generated into the SDK that can be
                       used in custom implementation hooks. This is useful when
                       you need state in the SDK that is not described in the
@@ -1411,8 +1464,11 @@ components:
                     type: object
                     properties: *a1
                   packageName:
+                    type: string
                     description: acme-php
                   packagistUsername:
+                    type: string
+                    default: konfig
                     description: The username used to publish to packagist.org
                   invokerPackage:
                     type: string
@@ -1471,8 +1527,10 @@ components:
                     type: object
                     properties: *a1
                   groupId:
+                    type: string
                     description: com.acme
                   artifactId:
+                    type: string
                     description: acme-kotlin-sdk
                 required:
                   - generator
@@ -1529,12 +1587,16 @@ components:
                     type: object
                     properties: *a1
                   podName:
+                    type: string
                     description: AcmeClient
                   classPrefix:
+                    type: string
                     description: A
                   authorName:
+                    type: string
                     description: acme.com
                   authorEmail:
+                    type: string
                     description: engineering@acme.com
                 required:
                   - generator
@@ -1593,6 +1655,7 @@ components:
                     type: object
                     properties: *a1
                   packageName:
+                    type: string
                     description: acme
                 required:
                   - generator
@@ -1648,8 +1711,10 @@ components:
                     type: object
                     properties: *a1
                   projectName:
+                    type: string
                     description: Acme
                   podAuthors:
+                    type: string
                     description: acme.com
                 required:
                   - generator
@@ -1669,17 +1734,27 @@ components:
                 additionalProperties:
                   type: object
                   additionalProperties:
-                    oneOf:
+                    oneOf: &a2
                       - type: string
                       - type: boolean
                       - type: number
                       - type: object
                     nullable: true
             modify:
+              type: object
+              additionalProperties:
+                oneOf: *a2
+                nullable: true
               description: A JSON where the key is a JSON Path pointing to a location in the
                 OAS and the value is the JSON value to be placed at the
                 location.
             update:
+              type: object
+              additionalProperties:
+                type: object
+                additionalProperties:
+                  oneOf: *a2
+                  nullable: true
               description: A JSON where the key is a JSON Path pointing to a location in the
                 OAS and the value is a JSON Object that is merged with the
                 existing JSON Object at that location.
@@ -1717,10 +1792,16 @@ components:
           type: string
           format: uri
         takeFirstTag:
+          type: boolean
+          default: true
           description: Multiple tags can cause conflicts for TypeScript SDK
         removeDefaultArrayValues:
+          type: boolean
+          default: true
           description: Default array value is not supported in Java SDK
         convertArrayDataTypesToAny:
+          type: boolean
+          default: false
           description: Array data type is not supported in TypeScript SDK for OAS 3.1
         allObjectsHaveAdditionalProperties:
           anyOf:
@@ -1773,6 +1854,7 @@ components:
       type: object
       properties:
         spec:
+          type: string
           description: JSON or YAML string of your OpenAPI Specification
           example: >
             openapi: 3.0.0
@@ -2516,6 +2598,7 @@ components:
       type: object
       properties:
         spec:
+          type: string
           description: JSON or YAML string of your OpenAPI Specification
           example: >
             openapi: 3.0.0
@@ -3257,9 +3340,11 @@ components:
           type: object
           properties:
             owner:
+              type: string
               description: The account owner of the repository
               example: konfig-dev
             repo:
+              type: string
               description: The name of the repository
               example: acme-sdks
           required:
@@ -3274,9 +3359,67 @@ components:
         diagnosis:
           type: array
           items:
+            type: object
+            properties:
+              path:
+                type: array
+                items:
+                  anyOf:
+                    - type: number
+                    - type: string
+                description: JsonPath
+                example:
+                  - paths
+                  - /pet
+                  - post
+              code:
+                anyOf:
+                  - type: string
+                    description: ID of linting rule
+                    example: operation-operationId
+                  - type: number
+              message:
+                type: string
+                example: Assign Operation#operationId to create better SDK method names.
+              severity:
+                type: integer
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                example: 0
+                description: >
+                  
+                  /**
+                   * Something not allowed by the rules of a language or other means.
+                   */
+                  Error = 0,
+
+                  /**
+                   * Something suspicious but allowed.
+                   */
+                  Warning = 1,
+
+                  /**
+                   * Something to inform about but not a problem.
+                   */
+                  Information = 2,
+
+                  /**
+                   * Something to hint to a better way of doing it, like proposing
+                   * a refactoring.
+                   */
+                  Hint = 3
+            required:
+              - path
+              - code
+              - message
+              - severity
             description: Information regarding an error or warning found in your OpenAPI
               Spec.
         passed:
+          type: boolean
           example: false
           description: "`true` if no warnings or errors were found while linting else
             `false`"
@@ -3304,6 +3447,9 @@ components:
                 - no-diff
           required:
             - status
+    FormatPythonBody:
+      type: string
+      example: print ()
   parameters: {}
 paths:
   /generate:
@@ -3329,6 +3475,25 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/GenerateResponseBody"
+  /formatPython:
+    post:
+      description: Python formatter using the black package
+      summary: Format Python Code
+      operationId: SDK_formatPython
+      tags:
+        - SDK
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              $ref: "#/components/schemas/FormatPythonBody"
+      responses:
+        "200":
+          description: Status
+          content:
+            text/plain:
+              schema:
+                type: string
   /push:
     post:
       description: Push your OpenAPI Specification to Konfig to trigger SDK generation
