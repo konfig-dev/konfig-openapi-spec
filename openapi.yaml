@@ -340,6 +340,8 @@ components:
                         required:
                           - operationId
                           - methodName
+                testPyPI:
+                  type: boolean
                 generator:
                   anyOf:
                     - type: string
